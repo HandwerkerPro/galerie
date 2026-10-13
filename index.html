@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meine Arbeiten</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#141414;color:#eee;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+header{text-align:center;padding:48px 16px 32px}
+h1{font-weight:300;letter-spacing:.2em;text-transform:uppercase;font-size:1.3rem;color:#ddd}
+main{max-width:1200px;margin:0 auto;padding:0 14px 48px}
+h2{font-weight:400;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:#888;margin:28px 0 14px}
+.gallery{columns:3 280px;column-gap:14px}
+.gallery img{width:100%;display:block;margin-bottom:14px;border-radius:6px;cursor:zoom-in;transition:transform .25s,opacity .25s;break-inside:avoid}
+.gallery img:hover{transform:scale(1.015);opacity:.9}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;cursor:zoom-out;z-index:10}
+#lb.open{display:flex}
+#lb img{max-width:92vw;max-height:92vh;border-radius:4px}
+</style>
+</head>
+<body>
+<header><h1>Meine Arbeiten</h1></header>
+
+<!-- BILDER AUSTAUSCHEN: Fotos in den Ordner "images/" legen und unten
+     die Dateinamen anpassen. Für ein weiteres Bild einfach eine Zeile
+     <img src="images/DATEINAME.jpg" alt="" loading="lazy"> in die passende
+     Gruppe einfügen. Neue Gruppe = neuen <section>-Block kopieren. -->
+<main>
+<section>
+  <h2>Waschtisch</h2>
+  <div class="gallery">
+    <img src="images/waschtisch-1.jpg" alt="Waschtisch 1" loading="lazy">
+    <img src="images/waschtisch-2.jpg" alt="Waschtisch 2" loading="lazy">
+    <img src="images/waschtisch-3.jpg" alt="Waschtisch 3" loading="lazy">
+    <img src="images/waschtisch-4.jpg" alt="Waschtisch 4" loading="lazy">
+    <img src="images/waschtisch-5.jpg" alt="Waschtisch 5" loading="lazy">
+    <img src="images/waschtisch-6.jpg" alt="Waschtisch 6" loading="lazy">
+  </div>
+</section>
+<section>
+  <h2>Spiegelschrank</h2>
+  <div class="gallery">
+    <img src="images/spiegelschrank-1.jpg" alt="Spiegelschrank 1" loading="lazy">
+    <img src="images/spiegelschrank-2.jpg" alt="Spiegelschrank 2" loading="lazy">
+    <img src="images/spiegelschrank-3.jpg" alt="Spiegelschrank 3" loading="lazy">
+    <img src="images/spiegelschrank-4.jpg" alt="Spiegelschrank 4" loading="lazy">
+  </div>
+</section>
+<section>
+  <h2>Etagenbett</h2>
+  <div class="gallery">
+    <img src="images/etagenbett-1.jpg" alt="Etagenbett 1" loading="lazy">
+    <img src="images/etagenbett-2.jpg" alt="Etagenbett 2" loading="lazy">
+    <img src="images/etagenbett-3.jpg" alt="Etagenbett 3" loading="lazy">
+    <img src="images/etagenbett-4.jpg" alt="Etagenbett 4" loading="lazy">
+    <img src="images/etagenbett-5.jpg" alt="Etagenbett 5" loading="lazy">
+  </div>
+</section>
+<section>
+  <h2>Kleiderschrank</h2>
+  <div class="gallery">
+    <img src="images/kleiderschrank-1.jpg" alt="Kleiderschrank 1" loading="lazy">
+    <img src="images/kleiderschrank-2.jpg" alt="Kleiderschrank 2" loading="lazy">
+    <img src="images/kleiderschrank-3.jpg" alt="Kleiderschrank 3" loading="lazy">
+    <img src="images/kleiderschrank-4.jpg" alt="Kleiderschrank 4" loading="lazy">
+  </div>
+</section>
+<section>
+  <h2>Gardinenschienen</h2>
+  <div class="gallery">
+    <img src="images/gardinenschienen-1.jpg" alt="Gardinenschienen 1" loading="lazy">
+    <img src="images/gardinenschienen-2.jpg" alt="Gardinenschienen 2" loading="lazy">
+    <img src="images/gardinenschienen-3.jpg" alt="Gardinenschienen 3" loading="lazy">
+    <img src="images/gardinenschienen-4.jpg" alt="Gardinenschienen 4" loading="lazy">
+    <img src="images/gardinenschienen-5.jpg" alt="Gardinenschienen 5" loading="lazy">
+    <img src="images/gardinenschienen-6.jpg" alt="Gardinenschienen 6" loading="lazy">
+  </div>
+</section>
+</main>
+
+<div id="lb"><img alt=""></div>
+<script>
+const lb=document.getElementById('lb'),li=lb.querySelector('img');
+document.querySelectorAll('.gallery img').forEach(i=>i.onclick=()=>{li.src=i.src;lb.classList.add('open')});
+lb.onclick=()=>lb.classList.remove('open');
+document.onkeydown=e=>{if(e.key==='Escape')lb.classList.remove('open')};
+</script>
+</body>
+</html>
