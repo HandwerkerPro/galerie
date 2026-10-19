@@ -5,37 +5,52 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Galerie</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@500;600;700&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#faf6ef;--card:#fff;--oak:#b07d4f;--walnut:#5b3a24;--beige:#ecdfcc;--text:#3d2b1f}
-body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.5}
-header{text-align:center;padding:72px 20px 36px;background:linear-gradient(180deg,#f3e8d8,var(--bg))}
-h1{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:clamp(2rem,5vw,3.2rem);color:var(--walnut)}
-header .line{width:64px;height:3px;background:var(--oak);border-radius:2px;margin:18px auto 0}
-main{max-width:1200px;margin:0 auto;padding:0 20px 40px}
-section.card{margin-top:32px;background:#fffdf9;border:1px solid #efe4d3;border-radius:22px;padding:24px 0 22px;box-shadow:0 8px 28px rgba(91,58,36,.08)}
-.head{display:flex;align-items:center;gap:14px;padding:0 26px 16px}
-h2{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:1.6rem;color:var(--walnut)}
-.count{font-size:.8rem;color:#9a7f68;background:var(--beige);padding:3px 11px;border-radius:20px}
-.nav{margin-left:auto;display:flex;gap:8px}
+:root{--bg:#fbf7f1;--oak:#c8862e;--walnut:#3b2a1e;--beige:#efe3d1;--text:#4a3a2e;--muted:#8a7360}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',system-ui,sans-serif;line-height:1.6;padding-bottom:90px}
+header{max-width:1100px;margin:0 auto;padding:80px 24px 20px}
+h1{font-family:'Lexend',sans-serif;font-weight:700;font-size:clamp(2.3rem,6vw,4rem);line-height:1.08;color:var(--walnut);letter-spacing:-.01em}
+header .line{width:72px;height:3px;background:var(--oak);margin:22px 0 0}
+.intro{max-width:720px;margin:22px 0 0;font-size:1.08rem;line-height:1.75;color:var(--text)}
+.intro.en{margin-top:10px;font-style:italic;color:var(--oak)}
+.gal{font-family:'Lexend',sans-serif;font-weight:600;color:var(--walnut);font-size:1.8rem;margin-top:56px}
+main{max-width:1100px;margin:0 auto;padding:10px 24px 40px}
+.job{display:grid;grid-template-columns:200px 1fr;gap:28px;padding:40px 0;border-top:1px solid var(--beige)}
+.job:first-child{border-top:0}
+.meta .num{font-family:'Lexend',sans-serif;font-weight:700;font-size:3.6rem;line-height:1;color:var(--oak);opacity:.9}
+.meta h2{font-family:'Lexend',sans-serif;font-weight:600;font-size:1.55rem;line-height:1.2;color:var(--walnut);margin-top:12px}
+.meta .bar{width:100%;max-width:170px;height:2px;background:var(--oak);margin:16px 0 12px}
+.meta .sub{display:block;font-size:.95rem;color:var(--muted);margin-top:4px}
+.count{font-size:.85rem;color:var(--muted)}
+.nav{display:flex;gap:8px;margin-top:16px}
 .arr{width:40px;height:40px;border-radius:50%;border:1px solid #e3d3bd;background:#fff;color:var(--walnut);font-size:1.4rem;cursor:pointer;transition:background .2s,color .2s}
 .arr:hover{background:var(--oak);color:#fff;border-color:var(--oak)}
-.gallery{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 26px;padding:6px 26px 14px;scrollbar-width:thin;scrollbar-color:#d9c4a6 transparent;-webkit-overflow-scrolling:touch}
-.gallery img{height:340px;width:auto;flex:none;scroll-snap-align:start;display:block;border-radius:14px;cursor:zoom-in;box-shadow:0 6px 18px rgba(91,58,36,.14);transition:transform .35s ease,box-shadow .35s ease,opacity .7s ease;background:var(--beige)}
-.gallery img:hover{transform:scale(1.025);box-shadow:0 12px 28px rgba(91,58,36,.22)}
+.strip{min-width:0}
+.gallery{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 14px;scrollbar-width:thin;scrollbar-color:#dcc6a6 transparent;-webkit-overflow-scrolling:touch}
+.gallery img{height:320px;width:auto;flex:none;scroll-snap-align:start;display:block;border-radius:12px;cursor:zoom-in;box-shadow:0 6px 18px rgba(59,42,30,.12);transition:transform .35s ease,box-shadow .35s ease,opacity .7s ease;background:var(--beige)}
+.gallery img:hover{transform:scale(1.025);box-shadow:0 12px 28px rgba(59,42,30,.2)}
+.ba{position:relative;flex:none;scroll-snap-align:start;display:block}
+.ba em{position:absolute;top:10px;left:10px;font-style:normal;font-size:.72rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:20px;background:rgba(251,247,241,.9);color:var(--walnut);box-shadow:0 2px 8px rgba(59,42,30,.15);pointer-events:none}
+.ba em.jl{background:var(--walnut);color:#fbf7f1;text-transform:none;letter-spacing:.02em}
+.ba em.pl{background:#e6ddd0;color:#5c4a3a}
+.ba em.mo{background:#8a6a4a;color:#fff}
+.ba em.na{background:var(--oak);color:#fff}
 .fade{opacity:0;transform:translateY(16px)}
 .fade.in{opacity:1;transform:none}
-footer{text-align:center;padding:36px 20px 44px;color:#9a7f68;font-size:.85rem;border-top:1px solid var(--beige);margin-top:40px}
-#lb{position:fixed;inset:0;background:rgba(40,26,16,.92);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;z-index:10}
+footer{text-align:center;padding:36px 20px 44px;color:var(--muted);font-size:.85rem;border-top:1px solid var(--beige);margin-top:30px}
+#lb{position:fixed;inset:0;background:rgba(35,24,16,.93);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;z-index:60}
 #lb.open{opacity:1;pointer-events:auto}
 #lb img{max-width:88vw;max-height:84vh;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
-#lb button{position:absolute;background:rgba(250,246,239,.15);color:#faf6ef;border:0;width:52px;height:52px;border-radius:50%;font-size:1.6rem;cursor:pointer;transition:background .2s}
-#lb button:hover{background:rgba(250,246,239,.3)}
+#lb button{position:absolute;background:rgba(251,247,241,.15);color:#fbf7f1;border:0;width:52px;height:52px;border-radius:50%;font-size:1.6rem;cursor:pointer;transition:background .2s}
+#lb button:hover{background:rgba(251,247,241,.3)}
 #prev{left:20px}#next{right:20px}#close{top:20px;right:20px}
 #count{position:absolute;bottom:22px;color:#e8dccb;font-size:.9rem;letter-spacing:.1em}
-@media(max-width:600px){.gallery img{height:240px;border-radius:10px}.nav{display:none}.head{padding:0 18px 12px}.gallery{padding:4px 18px 12px}h2{font-size:1.3rem}section.card{border-radius:16px}#lb button{width:42px;height:42px}#prev{left:8px}#next{right:8px}}
-.intro{max-width:720px;margin:24px auto 0;font-size:1.08rem;line-height:1.7;color:#5a4636}.intro.en{margin-top:10px;font-style:italic;color:var(--oak)}.gal{font-family:Fraunces,Georgia,serif;color:var(--walnut);font-size:1.9rem;margin-top:44px}.callbtn{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:50;background:var(--walnut);color:#fff8ee;text-decoration:none;font-weight:600;font-size:1.05rem;padding:14px 26px;border-radius:999px;box-shadow:0 8px 24px rgba(60,35,15,.35);white-space:nowrap;transition:transform .2s,background .2s}.callbtn:hover{background:var(--oak);transform:translateX(-50%) translateY(-2px)}body{padding-bottom:90px}</style>
+.callbtn{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:50;background:var(--walnut);color:#fff8ee;text-decoration:none;font-weight:600;font-size:1.05rem;padding:14px 26px;border-radius:999px;box-shadow:0 8px 24px rgba(60,35,15,.35);white-space:nowrap;transition:transform .2s,background .2s}
+.callbtn:hover{background:var(--oak);transform:translateX(-50%) translateY(-2px)}
+@media(max-width:760px){header{padding:52px 20px 10px}.job{grid-template-columns:1fr;gap:14px;padding:30px 0}.meta{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px}.meta .num{font-size:2.4rem}.meta h2{margin:0;font-size:1.35rem}.meta .sub{margin:0;font-size:.85rem}.meta .bar{flex-basis:100%;margin:6px 0 2px;max-width:none}.nav{display:none}.gallery img{height:230px;border-radius:10px}#lb button{width:42px;height:42px}#prev{left:8px}#next{right:8px}.callbtn{font-size:.95rem;padding:12px 20px}}
+</style>
 </head>
 <body>
 <header><h1>Handwerk mit Sorgfalt</h1><div class="line"></div><p class="intro">Wo andere aufhören, fängt präzises Handwerk an. Mit jahrelanger Praxis, tiefem technischen Verständnis und dem Blick fürs Detail setze ich komplexe Projekte sauber, schnell und langlebig um. Egal ob hochwertige Montage, maßgenaue Installationen oder anspruchsvolle Reparaturen: Sie bekommen keine halben Sachen, sondern saubere Ergebnisse auf den Punkt.</p><p class="intro en">English speaking customers are always welcome.</p><h2 class="gal">Über mich</h2><p class="intro">Mit über zehn Jahren Bauerfahrung stehe ich für Pünktlichkeit, Sorgfalt und Präzision. Ich nehme mir die nötige Zeit, damit jedes Detail perfekt sitzt. Meine größte Stärke ist mein tiefes Verständnis für Technik und Mechanik: Ich erkenne Probleme sofort und finde Lösungen, wo andere noch suchen.</p><p class="intro">Für Immobilienbesitzer übernehme ich zudem die laufende Instandhaltung sowie anfallende Arbeiten bei Renovierungen.</p><h2 class="gal">Galerie</h2></header>
@@ -45,60 +60,123 @@ footer{text-align:center;padding:36px 20px 44px;color:#9a7f68;font-size:.85rem;b
      <img src="images/DATEINAME.jpg" alt="" loading="lazy"> in die passende
      Gruppe einfügen. Neue Gruppe = neuen <section>-Block kopieren. -->
 <main>
-<section class="card">
-  <div class="head"><h2>Waschtisch</h2><span class="count">6 Fotos</span>
+<section class="job">
+  <div class="meta"><span class="num">01</span><h2>Möbelmontage</h2><span class="sub">Schränke, Betten &amp; mehr</span><div class="bar"></div><span class="count">15 Fotos</span>
     <div class="nav"><button class="arr" data-d="-1" aria-label="Zurück">&#8249;</button><button class="arr" data-d="1" aria-label="Weiter">&#8250;</button></div></div>
-  <div class="gallery">
-    <img src="images/waschtisch-1.jpg" alt="Waschtisch 1" loading="lazy">
-    <img src="images/waschtisch-2.jpg" alt="Waschtisch 2" loading="lazy">
-    <img src="images/waschtisch-3.jpg" alt="Waschtisch 3" loading="lazy">
-    <img src="images/waschtisch-4.jpg" alt="Waschtisch 4" loading="lazy">
-    <img src="images/waschtisch-5.jpg" alt="Waschtisch 5" loading="lazy">
-    <img src="images/waschtisch-6.jpg" alt="Waschtisch 6" loading="lazy">
-  </div>
-</section>
-<section class="card">
-  <div class="head"><h2>Spiegelschrank</h2><span class="count">4 Fotos</span>
-    <div class="nav"><button class="arr" data-d="-1" aria-label="Zurück">&#8249;</button><button class="arr" data-d="1" aria-label="Weiter">&#8250;</button></div></div>
-  <div class="gallery">
-    <img src="images/spiegelschrank-1.jpg" alt="Spiegelschrank 1" loading="lazy">
-    <img src="images/spiegelschrank-2.jpg" alt="Spiegelschrank 2" loading="lazy">
-    <img src="images/spiegelschrank-3.jpg" alt="Spiegelschrank 3" loading="lazy">
-    <img src="images/spiegelschrank-4.jpg" alt="Spiegelschrank 4" loading="lazy">
-  </div>
-</section>
-<section class="card">
-  <div class="head"><h2>Etagenbett</h2><span class="count">5 Fotos</span>
-    <div class="nav"><button class="arr" data-d="-1" aria-label="Zurück">&#8249;</button><button class="arr" data-d="1" aria-label="Weiter">&#8250;</button></div></div>
-  <div class="gallery">
-    <img src="images/etagenbett-1.jpg" alt="Etagenbett 1" loading="lazy">
+  <div class="strip"><div class="gallery">
+    <!-- Etagenbett -->
+    <span class="ba"><img src="images/etagenbett-1.jpg" alt="Etagenbett 1" loading="lazy"><em class="jl">Etagenbett</em></span>
     <img src="images/etagenbett-2.jpg" alt="Etagenbett 2" loading="lazy">
     <img src="images/etagenbett-3.jpg" alt="Etagenbett 3" loading="lazy">
     <img src="images/etagenbett-4.jpg" alt="Etagenbett 4" loading="lazy">
     <img src="images/etagenbett-5.jpg" alt="Etagenbett 5" loading="lazy">
-  </div>
-</section>
-<section class="card">
-  <div class="head"><h2>Kleiderschrank</h2><span class="count">4 Fotos</span>
-    <div class="nav"><button class="arr" data-d="-1" aria-label="Zurück">&#8249;</button><button class="arr" data-d="1" aria-label="Weiter">&#8250;</button></div></div>
-  <div class="gallery">
-    <img src="images/kleiderschrank-1.jpg" alt="Kleiderschrank 1" loading="lazy">
+    <!-- Kleiderschrank -->
+    <span class="ba"><img src="images/kleiderschrank-1.jpg" alt="Kleiderschrank 1" loading="lazy"><em class="jl">Kleiderschrank</em></span>
     <img src="images/kleiderschrank-2.jpg" alt="Kleiderschrank 2" loading="lazy">
     <img src="images/kleiderschrank-3.jpg" alt="Kleiderschrank 3" loading="lazy">
     <img src="images/kleiderschrank-4.jpg" alt="Kleiderschrank 4" loading="lazy">
-  </div>
-</section>
-<section class="card">
-  <div class="head"><h2>Gardinenschienen</h2><span class="count">6 Fotos</span>
-    <div class="nav"><button class="arr" data-d="-1" aria-label="Zurück">&#8249;</button><button class="arr" data-d="1" aria-label="Weiter">&#8250;</button></div></div>
-  <div class="gallery">
-    <img src="images/gardinenschienen-1.jpg" alt="Gardinenschienen 1" loading="lazy">
+    <!-- Gardinenschienen -->
+    <span class="ba"><img src="images/gardinenschienen-1.jpg" alt="Gardinenschienen 1" loading="lazy"><em class="jl">Gardinenschienen</em></span>
     <img src="images/gardinenschienen-2.jpg" alt="Gardinenschienen 2" loading="lazy">
     <img src="images/gardinenschienen-3.jpg" alt="Gardinenschienen 3" loading="lazy">
     <img src="images/gardinenschienen-4.jpg" alt="Gardinenschienen 4" loading="lazy">
     <img src="images/gardinenschienen-5.jpg" alt="Gardinenschienen 5" loading="lazy">
     <img src="images/gardinenschienen-6.jpg" alt="Gardinenschienen 6" loading="lazy">
-  </div>
+  </div></div>
+</section>
+<section class="job">
+  <div class="meta"><span class="num">02</span><h2>Umzug</h2><div class="bar"></div><span class="count">4 Fotos</span>
+    <div class="nav"><button class="arr" data-d="-1" aria-label="Zurück">&#8249;</button><button class="arr" data-d="1" aria-label="Weiter">&#8250;</button></div></div>
+  <div class="strip"><div class="gallery">
+    <img src="images/umzug-1.jpg" alt="Umzug 1" loading="lazy">
+    <img src="images/umzug-2.jpg" alt="Umzug 2" loading="lazy">
+    <img src="images/umzug-3.jpg" alt="Umzug 3" loading="lazy">
+    <img src="images/umzug-4.jpg" alt="Umzug 4" loading="lazy">
+  </div></div>
+</section>
+<section class="job">
+  <div class="meta"><span class="num">03</span><h2>Sanitär</h2><span class="sub">Bad, Installation &amp; Reparatur</span><div class="bar"></div><span class="count">12 Fotos</span>
+    <div class="nav"><button class="arr" data-d="-1" aria-label="Zurück">&#8249;</button><button class="arr" data-d="1" aria-label="Weiter">&#8250;</button></div></div>
+  <div class="strip"><div class="gallery">
+    <!-- Waschtisch -->
+    <span class="ba"><img src="images/waschtisch-1.jpg" alt="Waschtisch 1" loading="lazy"><em class="jl">Waschtisch</em></span>
+    <img src="images/waschtisch-2.jpg" alt="Waschtisch 2" loading="lazy">
+    <img src="images/waschtisch-3.jpg" alt="Waschtisch 3" loading="lazy">
+    <img src="images/waschtisch-4.jpg" alt="Waschtisch 4" loading="lazy">
+    <img src="images/waschtisch-5.jpg" alt="Waschtisch 5" loading="lazy">
+    <img src="images/waschtisch-6.jpg" alt="Waschtisch 6" loading="lazy">
+    <!-- Spiegelschrank -->
+    <span class="ba"><img src="images/spiegelschrank-1.jpg" alt="Spiegelschrank 1" loading="lazy"><em class="jl">Spiegelschrank</em></span>
+    <img src="images/spiegelschrank-2.jpg" alt="Spiegelschrank 2" loading="lazy">
+    <img src="images/spiegelschrank-3.jpg" alt="Spiegelschrank 3" loading="lazy">
+    <img src="images/spiegelschrank-4.jpg" alt="Spiegelschrank 4" loading="lazy">
+    <!-- Armatur -->
+    <span class="ba"><img src="images/sanitaer-1.jpg" alt="Sanitär 1" loading="lazy"><em class="jl">Armatur</em></span>
+    <img src="images/sanitaer-2.jpg" alt="Sanitär 2" loading="lazy">
+  </div></div>
+</section>
+<section class="job">
+  <div class="meta"><span class="num">04</span><h2>Küchenmontage</h2><span class="sub">Installation &amp; Montage</span><div class="bar"></div><span class="count">11 Fotos</span>
+    <div class="nav"><button class="arr" data-d="-1" aria-label="Zurück">&#8249;</button><button class="arr" data-d="1" aria-label="Weiter">&#8250;</button></div></div>
+  <div class="strip"><div class="gallery">
+    <!-- Küche 1: Einbauküche mit Spülmaschine & Kochfeld -->
+    <img src="images/kueche-1.jpg" alt="Küche 1" loading="lazy">
+    <img src="images/kueche-2.jpg" alt="Küche 2" loading="lazy">
+    <img src="images/kueche-3.jpg" alt="Küche 3" loading="lazy">
+    <!-- Küche 2: Küchenzeile, vorher -> nachher -->
+    <span class="ba"><img src="images/kueche2-vorher-1.jpg" alt="Küchenmontage vorher 1" loading="lazy"><em>Vorher</em></span>
+    <span class="ba"><img src="images/kueche2-vorher-2.jpg" alt="Küchenmontage vorher 2" loading="lazy"><em>Vorher</em></span>
+    <span class="ba"><img src="images/kueche2-nachher-1.jpg" alt="Küchenmontage nachher 1" loading="lazy"><em class="na">Nachher</em></span>
+    <span class="ba"><img src="images/kueche2-nachher-2.jpg" alt="Küchenmontage nachher 2" loading="lazy"><em class="na">Nachher</em></span>
+    <!-- Küche 3: Planung -> vorher -> Montage -> nachher -->
+    <span class="ba"><img src="images/kueche3-planung.jpg" alt="Küchenmontage Planung" loading="lazy"><em class="pl">Planung</em></span>
+    <span class="ba"><img src="images/kueche3-vorher.jpg" alt="Küchenmontage vorher" loading="lazy"><em>Vorher</em></span>
+    <span class="ba"><img src="images/kueche3-montage.jpg" alt="Küchenmontage Montage" loading="lazy"><em class="mo">Montage</em></span>
+    <span class="ba"><img src="images/kueche3-nachher.jpg" alt="Küchenmontage nachher" loading="lazy"><em class="na">Nachher</em></span>
+    <!-- Weitere Küchen hier anfügen (gleiches Schema, Zähler oben anpassen) -->
+  </div></div>
+</section>
+<section class="job">
+  <div class="meta"><span class="num">05</span><h2>Einrichtung</h2><span class="sub">Räume komplett eingerichtet</span><div class="bar"></div><span class="count">2 Fotos</span>
+    <div class="nav"><button class="arr" data-d="-1" aria-label="Zurück">&#8249;</button><button class="arr" data-d="1" aria-label="Weiter">&#8250;</button></div></div>
+  <div class="strip"><div class="gallery">
+    <img src="images/einrichtung-1.jpg" alt="Einrichtung 1" loading="lazy">
+    <img src="images/einrichtung-2.jpg" alt="Einrichtung 2" loading="lazy">
+  </div></div>
+</section>
+<section class="job">
+  <div class="meta"><span class="num">06</span><h2>Rohbau &amp; Sanierung</h2><span class="sub">Mauerwerk &amp; Holzkonstruktion</span><div class="bar"></div><span class="count">5 Fotos</span>
+    <div class="nav"><button class="arr" data-d="-1" aria-label="Zurück">&#8249;</button><button class="arr" data-d="1" aria-label="Weiter">&#8250;</button></div></div>
+  <div class="strip"><div class="gallery">
+    <img src="images/rohbau-1.jpg" alt="Rohbau &amp; Sanierung 1" loading="lazy">
+    <img src="images/rohbau-2.jpg" alt="Rohbau &amp; Sanierung 2" loading="lazy">
+    <img src="images/rohbau-3.jpg" alt="Rohbau &amp; Sanierung 3" loading="lazy">
+    <img src="images/rohbau-4.jpg" alt="Rohbau &amp; Sanierung 4" loading="lazy">
+    <img src="images/rohbau-5.jpg" alt="Rohbau &amp; Sanierung 5" loading="lazy">
+  </div></div>
+</section>
+<section class="job">
+  <div class="meta"><span class="num">07</span><h2>Außenbereich</h2><span class="sub">Abriss &amp; Palisaden</span><div class="bar"></div><span class="count">3 Fotos</span>
+    <div class="nav"><button class="arr" data-d="-1" aria-label="Zurück">&#8249;</button><button class="arr" data-d="1" aria-label="Weiter">&#8250;</button></div></div>
+  <div class="strip"><div class="gallery">
+    <img src="images/aussen-1.jpg" alt="Außenbereich 1" loading="lazy">
+    <img src="images/aussen-2.jpg" alt="Außenbereich 2" loading="lazy">
+    <img src="images/aussen-3.jpg" alt="Außenbereich 3" loading="lazy">
+  </div></div>
+</section>
+<section class="job">
+  <div class="meta"><span class="num">08</span><h2>Türen</h2><span class="sub">Reparieren &amp; Lackieren</span><div class="bar"></div><span class="count">8 Fotos</span>
+    <div class="nav"><button class="arr" data-d="-1" aria-label="Zurück">&#8249;</button><button class="arr" data-d="1" aria-label="Weiter">&#8250;</button></div></div>
+  <div class="strip"><div class="gallery">
+    <span class="ba"><img src="images/tuer-vorher-1.jpg" alt="Türen vorher 1" loading="lazy"><em>Vorher</em></span>
+    <span class="ba"><img src="images/tuer-vorher-2.jpg" alt="Türen vorher 2" loading="lazy"><em>Vorher</em></span>
+    <span class="ba"><img src="images/tuer-vorher-3.jpg" alt="Türen vorher 3" loading="lazy"><em>Vorher</em></span>
+    <span class="ba"><img src="images/tuer-nachher-1.jpg" alt="Türen nachher 1" loading="lazy"><em class="na">Nachher</em></span>
+    <span class="ba"><img src="images/tuer-nachher-2.jpg" alt="Türen nachher 2" loading="lazy"><em class="na">Nachher</em></span>
+    <span class="ba"><img src="images/tuer-nachher-3.jpg" alt="Türen nachher 3" loading="lazy"><em class="na">Nachher</em></span>
+    <span class="ba"><img src="images/zarge-vorher.jpg" alt="Türzarge vorher" loading="lazy"><em>Vorher</em></span>
+    <span class="ba"><img src="images/zarge-nachher.jpg" alt="Türzarge nachher" loading="lazy"><em class="na">Nachher</em></span>
+  </div></div>
 </section>
 </main>
 
@@ -122,7 +200,7 @@ document.getElementById('close').onclick=close;li.onclick=e=>e.stopPropagation()
 document.onkeydown=e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1)};
 const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}}),{threshold:.1,root:null,rootMargin:'0px 400px'});
 imgs.forEach(im=>io.observe(im));
-document.querySelectorAll('.arr').forEach(b=>b.onclick=()=>{const g=b.closest('.card').querySelector('.gallery');g.scrollBy({left:b.dataset.d*g.clientWidth*.8,behavior:'smooth'})});
+document.querySelectorAll('.arr').forEach(b=>b.onclick=()=>{const g=b.closest('.job').querySelector('.gallery');g.scrollBy({left:b.dataset.d*g.clientWidth*.8,behavior:'smooth'})});
 </script>
 <a class="callbtn" href="tel:+4915567449931" aria-label="Jetzt anrufen">&#128222; Jetzt anrufen: 0155 67449931</a>
 </body>
